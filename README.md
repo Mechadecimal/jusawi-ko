@@ -4,6 +4,8 @@ Currently uses the Community Rules 2.0
 
 Originally designed for Kawazoi Office, with love. ❤️
 
+## Does not yet support Mysteries nor Distortions!
+
 ## Features
 
 ### Attributes
