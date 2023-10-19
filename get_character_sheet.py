@@ -1,13 +1,15 @@
-import os.path
+import os, httplib2
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+from apiclient import discovery
+from google.oauth2 import service_account
 
-SCOPE = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+try:
+	scope = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+	secret_file = os.path.join(os.cwd(), 'jusawi-ko-service-account.json')
+	credentials = service_account.Credentials.from_service_account_file(secret_file, scopes=scope)
+	service = discovery.build('sheets', 'v4', credentials=credentials)
 
+except
 def get_character_background():
 	""" Gets character name, occupation, age, height, and avatar. """
 
