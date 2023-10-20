@@ -163,38 +163,38 @@ RANGES = [
 		'CharSheet!AT69', # Weapon 4 Effect 10 Name
 		'CharSheet!AT70', # Weapon 4 Effect 10 Cost
 		'CharSheet!BN60', # Weapon 4 Legal
-		'CharSheet!', # Outfit Name
-		'CharSheet!', # Outfit Def range
-		'CharSheet!', # Outfit Def mod
-		'CharSheet!', # Outfit Evd range
-		'CharSheet!', # Outfit Evd mod
-		'CharSheet!', # Outfit Slash hp res
-		'CharSheet!', # Outfit Slash stagger res
-		'CharSheet!', # Outfit Pierce hp res
-		'CharSheet!', # Outfit Pierce stagger res
-		'CharSheet!', # Outfit Blunt hp res
-		'CharSheet!', # Outfit Blunt stagger res
-		'CharSheet!', # Outfit Effect 1 Name
-		'CharSheet!', # Outfit Effect 1 Cost
-		'CharSheet!', # Outfit Effect 2 Name
-		'CharSheet!', # Outfit Effect 2 Cost
-		'CharSheet!', # Outfit Effect 3 Name
-		'CharSheet!', # Outfit Effect 3 Cost
-		'CharSheet!', # Outfit Effect 4 Name
-		'CharSheet!', # Outfit Effect 4 Cost
-		'CharSheet!', # Outfit Effect 5 Name
-		'CharSheet!', # Outfit Effect 5 Cost
-		'CharSheet!', # Outfit Effect 6 Name
-		'CharSheet!', # Outfit Effect 6 Cost
-		'CharSheet!', # Outfit Effect 7 Name
-		'CharSheet!', # Outfit Effect 7 Cost
-		'CharSheet!', # Outfit Effect 8 Name
-		'CharSheet!', # Outfit Effect 8 Cost
-		'CharSheet!', # Outfit Effect 9 Name
-		'CharSheet!', # Outfit Effect 9 Cost
-		'CharSheet!', # Outfit Effect 10 Name
-		'CharSheet!', # Outfit Effect 10 Cost
-		'CharSheet!', # Outfit Legal
+		'CharSheet!B72', # Outfit Name
+		'CharSheet!AJ72', # Outfit Def range
+		'CharSheet!AL72', # Outfit Def mod
+		'CharSheet!AP72', # Outfit Evd range
+		'CharSheet!AR72', # Outfit Evd mod
+		'CharSheet!D73', # Outfit Slash hp res
+		'CharSheet!H73', # Outfit Slash stagger res
+		'CharSheet!D75', # Outfit Pierce hp res
+		'CharSheet!H75', # Outfit Pierce stagger res
+		'CharSheet!D77', # Outfit Blunt hp res
+		'CharSheet!H77', # Outfit Blunt stagger res
+		'CharSheet!L73', # Outfit Effect 1 Name
+		'CharSheet!L74', # Outfit Effect 1 Cost
+		'CharSheet!S73', # Outfit Effect 2 Name
+		'CharSheet!S74', # Outfit Effect 2 Cost
+		'CharSheet!L75', # Outfit Effect 3 Name
+		'CharSheet!L76', # Outfit Effect 3 Cost
+		'CharSheet!S75', # Outfit Effect 4 Name
+		'CharSheet!S76', # Outfit Effect 4 Cost
+		'CharSheet!L77', # Outfit Effect 5 Name
+		'CharSheet!L78', # Outfit Effect 5 Cost
+		'CharSheet!S77', # Outfit Effect 6 Name
+		'CharSheet!S78', # Outfit Effect 6 Cost
+		'CharSheet!L79', # Outfit Effect 7 Name
+		'CharSheet!L80', # Outfit Effect 7 Cost
+		'CharSheet!S79', # Outfit Effect 8 Name
+		'CharSheet!S80', # Outfit Effect 8 Cost
+		'CharSheet!L81', # Outfit Effect 9 Name
+		'CharSheet!L82', # Outfit Effect 9 Cost
+		'CharSheet!S81', # Outfit Effect 10 Name
+		'CharSheet!S82', # Outfit Effect 10 Cost
+		'CharSheet!BI72', # Outfit Legal
 	]
 
 def get_character_background():
