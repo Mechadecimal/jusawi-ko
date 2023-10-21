@@ -218,58 +218,58 @@ RANGES = [
 		'CharSheet!AM109', # Augment Effect 10 Name
 		'CharSheet!AM110', # Augment Effect 10 Cost
 		'CharSheet!BA100', # Augment Legal
-		'CharSheet!C80', # Skill 1 Name
-		'CharSheet!X80', # Skill 1 Type
-		'CharSheet!M80', # Skill 1 Dice range
-		'CharSheet!O80', # Skill 1 Dice mod
-		'CharSheet!S80', # Skill 1 Light cost
-		'CharSheet!C82', # Skill 1 Effect 1 Name
-		'CharSheet!C83', # Skill 1 Effect 1 Cost
-		'CharSheet!J82', # Skill 1 Effect 2 Name
-		'CharSheet!J83', # Skill 1 Effect 2 Cost
-		'CharSheet!C84', # Skill 1 Effect 3 Name
-		'CharSheet!C85', # Skill 1 Effect 3 Cost
-		'CharSheet!J84', # Skill 1 Effect 4 Name
-		'CharSheet!J85', # Skill 1 Effect 4 Cost
-		'CharSheet!C86', # Skill 1 Effect 5 Name
-		'CharSheet!C87', # Skill 1 Effect 5 Cost
-		'CharSheet!J86', # Skill 1 Effect 6 Name
-		'CharSheet!J87', # Skill 1 Effect 6 Cost
-		'CharSheet!C88', # Skill 1 Effect 7 Name
-		'CharSheet!C89', # Skill 1 Effect 7 Cost
-		'CharSheet!J88', # Skill 1 Effect 8 Name
-		'CharSheet!J89', # Skill 1 Effect 8 Cost
-		'CharSheet!C90', # Skill 1 Effect 9 Name
-		'CharSheet!C91', # Skill 1 Effect 9 Cost
-		'CharSheet!J90', # Skill 1 Effect 10 Name
-		'CharSheet!J91', # Skill 1 Effect 10 Cost
-		'CharSheet!', # Skill 1 Legal
-		'CharSheet!', # Skill 2 Name
-		'CharSheet!', # Skill 2 Type
-		'CharSheet!', # Skill 2 Dice range
-		'CharSheet!', # Skill 2 Dice mod
-		'CharSheet', # Skill 2 Light cost
-		'CharSheet!', # Skill 2 Effect 1 Name
-		'CharSheet!', # Skill 2 Effect 1 Cost
-		'CharSheet!', # Skill 2 Effect 2 Name
-		'CharSheet!', # Skill 2 Effect 2 Cost
-		'CharSheet!', # Skill 2 Effect 3 Name
-		'CharSheet!', # Skill 2 Effect 3 Cost
-		'CharSheet!', # Skill 2 Effect 4 Name
-		'CharSheet!', # Skill 2 Effect 4 Cost
-		'CharSheet!', # Skill 2 Effect 5 Name
-		'CharSheet!', # Skill 2 Effect 5 Cost
-		'CharSheet!', # Skill 2 Effect 6 Name
-		'CharSheet!', # Skill 2 Effect 6 Cost
-		'CharSheet!', # Skill 2 Effect 7 Name
-		'CharSheet!', # Skill 2 Effect 7 Cost
-		'CharSheet!', # Skill 2 Effect 8 Name
-		'CharSheet!', # Skill 2 Effect 8 Cost
-		'CharSheet!', # Skill 2 Effect 9 Name
-		'CharSheet!', # Skill 2 Effect 9 Cost
-		'CharSheet!', # Skill 2 Effect 10 Name
-		'CharSheet!', # Skill 2 Effect 10 Cost
-		'CharSheet!', # Skill 2 Legal
+		'CharSheet!C113', # Skill 1 Name
+		'CharSheet!X113', # Skill 1 Type
+		'CharSheet!M113', # Skill 1 Dice range
+		'CharSheet!O113', # Skill 1 Dice mod
+		'CharSheet!S113', # Skill 1 Light cost
+		'CharSheet!C115', # Skill 1 Effect 1 Name
+		'CharSheet!C116', # Skill 1 Effect 1 Cost
+		'CharSheet!J115', # Skill 1 Effect 2 Name
+		'CharSheet!J116', # Skill 1 Effect 2 Cost
+		'CharSheet!C117', # Skill 1 Effect 3 Name
+		'CharSheet!C118', # Skill 1 Effect 3 Cost
+		'CharSheet!J117', # Skill 1 Effect 4 Name
+		'CharSheet!J118', # Skill 1 Effect 4 Cost
+		'CharSheet!C119', # Skill 1 Effect 5 Name
+		'CharSheet!C120', # Skill 1 Effect 5 Cost
+		'CharSheet!J119', # Skill 1 Effect 6 Name
+		'CharSheet!J120', # Skill 1 Effect 6 Cost
+		'CharSheet!C121', # Skill 1 Effect 7 Name
+		'CharSheet!C122', # Skill 1 Effect 7 Cost
+		'CharSheet!J121', # Skill 1 Effect 8 Name
+		'CharSheet!J122', # Skill 1 Effect 8 Cost
+		'CharSheet!C123', # Skill 1 Effect 9 Name
+		'CharSheet!C124', # Skill 1 Effect 9 Cost
+		'CharSheet!J123', # Skill 1 Effect 10 Name
+		'CharSheet!J124', # Skill 1 Effect 10 Cost
+		'CharSheet!AA114', # Skill 1 Legal
+		'CharSheet!AC113', # Skill 2 Name
+		'CharSheet!AX113', # Skill 2 Type
+		'CharSheet!AM113', # Skill 2 Dice range
+		'CharSheet!AO113', # Skill 2 Dice mod
+		'CharSheet!AS113', # Skill 2 Light cost
+		'CharSheet!AC115', # Skill 2 Effect 1 Name
+		'CharSheet!AC116', # Skill 2 Effect 1 Cost
+		'CharSheet!AJ115', # Skill 2 Effect 2 Name
+		'CharSheet!AJ116', # Skill 2 Effect 2 Cost
+		'CharSheet!AC117', # Skill 2 Effect 3 Name
+		'CharSheet!AC118', # Skill 2 Effect 3 Cost
+		'CharSheet!AJ117', # Skill 2 Effect 4 Name
+		'CharSheet!AJ118', # Skill 2 Effect 4 Cost
+		'CharSheet!AC119', # Skill 2 Effect 5 Name
+		'CharSheet!AC120', # Skill 2 Effect 5 Cost
+		'CharSheet!AJ119', # Skill 2 Effect 6 Name
+		'CharSheet!AJ120', # Skill 2 Effect 6 Cost
+		'CharSheet!AC121', # Skill 2 Effect 7 Name
+		'CharSheet!AC122', # Skill 2 Effect 7 Cost
+		'CharSheet!AJ121', # Skill 2 Effect 8 Name
+		'CharSheet!AJ122', # Skill 2 Effect 8 Cost
+		'CharSheet!AC123', # Skill 2 Effect 9 Name
+		'CharSheet!AC124', # Skill 2 Effect 9 Cost
+		'CharSheet!AJ123', # Skill 2 Effect 10 Name
+		'CharSheet!AJ124', # Skill 2 Effect 10 Cost
+		'CharSheet!BA114', # Skill 2 Legal
 		'CharSheet!', # Skill 3 Name
 		'CharSheet!', # Skill 3 Type
 		'CharSheet!', # Skill 3 Dice range
