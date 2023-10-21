@@ -195,6 +195,29 @@ RANGES = [
 		'CharSheet!S81', # Outfit Effect 10 Name
 		'CharSheet!S82', # Outfit Effect 10 Cost
 		'CharSheet!BI72', # Outfit Legal
+		'CharSheet!B100', # Augment Name
+		'CharSheet!Y100', # Augment Type
+		'CharSheet!AF101', # Augment Effect 1 Name
+		'CharSheet!AF102', # Augment Effect 1 Cost
+		'CharSheet!AM101', # Augment Effect 2 Name
+		'CharSheet!AM102', # Augment Effect 2 Cost
+		'CharSheet!AF103', # Augment Effect 3 Name
+		'CharSheet!AF104', # Augment Effect 3 Cost
+		'CharSheet!AM103', # Augment Effect 4 Name
+		'CharSheet!AM104', # Augment Effect 4 Cost
+		'CharSheet!AF105', # Augment Effect 5 Name
+		'CharSheet!AF106', # Augment Effect 5 Cost
+		'CharSheet!AM105', # Augment Effect 6 Name
+		'CharSheet!AM106', # Augment Effect 6 Cost
+		'CharSheet!AF107', # Augment Effect 7 Name
+		'CharSheet!AF108', # Augment Effect 7 Cost
+		'CharSheet!AM107', # Augment Effect 8 Name
+		'CharSheet!AM108', # Augment Effect 8 Cost
+		'CharSheet!AF109', # Augment Effect 9 Name
+		'CharSheet!AF110', # Augment Effect 9 Cost
+		'CharSheet!AM109', # Augment Effect 10 Name
+		'CharSheet!AM110', # Augment Effect 10 Cost
+		'CharSheet!BA100', # Augment Legal
 		'CharSheet!C80', # Skill 1 Name
 		'CharSheet!X80', # Skill 1 Type
 		'CharSheet!M80', # Skill 1 Dice range
