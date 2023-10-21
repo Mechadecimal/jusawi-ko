@@ -13,32 +13,32 @@ except OSError as e:
 	print(e)
 
 RANGES = [
-		'BioSheet!F4', # Name
-		'BioSheet!F5', # Occupation
-		'BioSheet!E6', # Age
-		'BioSheet!M6', # Height
-		'CharSheet!B7', # Character image
-		'CharSheet!AS2', # Player name
-		'CharSheet!U21', # Rank
-		'CharSheet!AB23', # Level
-		'CharSheet!U23', # EXP
-		'CharSheet!R13', # Fortitude
-		'CharSheet!W13', # Prudence
-		'CharSheet!AB13', # Justice
-		'CharSheet!R20', # Charm
-		'CharSheet!W20', # Insight
-		'CharSheet!AB20', # Temperance
-		'CharSheet!AO5', # Health max
-		'CharSheet!AZ5', # Stagger res nax
-		'CharSheet!AO7', # Mentality max
-		'CharSheet!AZ7', # Light max
-		'CharSheet!AJ9', # Att
-		'CharSheet!AQ9', # Def
-		'CharSheet!AX9', # Evd
-		'CharSheet!BM42', # Weapon effect slot amount
-		'CharSheet!BM43', # Outfit effect slot amount
-		'CharSheet!BM44', # Augment effect slot amount
-		'CharSheet!BM45', # Skill effect slot amount
+		'BioSheet!F4', # Character Name
+		'BioSheet!F5', # Character Occupation
+		'BioSheet!E6', # Character Age
+		'BioSheet!M6', # Character Height
+		'CharSheet!B7', # Character Image
+		'CharSheet!AS2', # Player Name
+		'CharSheet!U21', # Character Rank
+		'CharSheet!AB23', # Character Level
+		'CharSheet!U23', # Character EXP
+		'CharSheet!R13', # Character Fortitude
+		'CharSheet!W13', # Character Prudence
+		'CharSheet!AB13', # Character Justice
+		'CharSheet!R20', # Character Charm
+		'CharSheet!W20', # Character Insight
+		'CharSheet!AB20', # CharacterTemperance
+		'CharSheet!AO5', # Character Health max
+		'CharSheet!AZ5', # Character Stagger res nax
+		'CharSheet!AO7', # Character Mentality max
+		'CharSheet!AZ7', # Character Light max
+		'CharSheet!AJ9', # Character Att
+		'CharSheet!AQ9', # Character Def
+		'CharSheet!AX9', # Character Evd
+		'CharSheet!BM42', # Character Weapon effect slot amount
+		'CharSheet!BM43', # Character Outfit effect slot amount
+		'CharSheet!BM44', # Character Augment effect slot amount
+		'CharSheet!BM45', # Character Skill effect slot amount
 		'CharSheet!B47', # Weapon 1 Name
 		'CharSheet!O47', # Weapon 1 Melee true
 		'CharSheet!O48', # Weapon 1 Range true
