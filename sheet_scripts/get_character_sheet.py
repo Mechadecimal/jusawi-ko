@@ -195,6 +195,162 @@ RANGES = [
 		'CharSheet!S81', # Outfit Effect 10 Name
 		'CharSheet!S82', # Outfit Effect 10 Cost
 		'CharSheet!BI72', # Outfit Legal
+		'CharSheet!C80', # Skill 1 Name
+		'CharSheet!X80', # Skill 1 Type
+		'CharSheet!M80', # Skill 1 Dice range
+		'CharSheet!O80', # Skill 1 Dice mod
+		'CharSheet!S80', # Skill 1 Light cost
+		'CharSheet!C82', # Skill 1 Effect 1 Name
+		'CharSheet!C83', # Skill 1 Effect 1 Cost
+		'CharSheet!J82', # Skill 1 Effect 2 Name
+		'CharSheet!J83', # Skill 1 Effect 2 Cost
+		'CharSheet!C84', # Skill 1 Effect 3 Name
+		'CharSheet!C85', # Skill 1 Effect 3 Cost
+		'CharSheet!J84', # Skill 1 Effect 4 Name
+		'CharSheet!J85', # Skill 1 Effect 4 Cost
+		'CharSheet!C86', # Skill 1 Effect 5 Name
+		'CharSheet!C87', # Skill 1 Effect 5 Cost
+		'CharSheet!J86', # Skill 1 Effect 6 Name
+		'CharSheet!J87', # Skill 1 Effect 6 Cost
+		'CharSheet!C88', # Skill 1 Effect 7 Name
+		'CharSheet!C89', # Skill 1 Effect 7 Cost
+		'CharSheet!J88', # Skill 1 Effect 8 Name
+		'CharSheet!J89', # Skill 1 Effect 8 Cost
+		'CharSheet!C90', # Skill 1 Effect 9 Name
+		'CharSheet!C91', # Skill 1 Effect 9 Cost
+		'CharSheet!J90', # Skill 1 Effect 10 Name
+		'CharSheet!J91', # Skill 1 Effect 10 Cost
+		'CharSheet!', # Skill 1 Legal
+		'CharSheet!', # Skill 2 Name
+		'CharSheet!', # Skill 2 Type
+		'CharSheet!', # Skill 2 Dice range
+		'CharSheet!', # Skill 2 Dice mod
+		'CharSheet', # Skill 2 Light cost
+		'CharSheet!', # Skill 2 Effect 1 Name
+		'CharSheet!', # Skill 2 Effect 1 Cost
+		'CharSheet!', # Skill 2 Effect 2 Name
+		'CharSheet!', # Skill 2 Effect 2 Cost
+		'CharSheet!', # Skill 2 Effect 3 Name
+		'CharSheet!', # Skill 2 Effect 3 Cost
+		'CharSheet!', # Skill 2 Effect 4 Name
+		'CharSheet!', # Skill 2 Effect 4 Cost
+		'CharSheet!', # Skill 2 Effect 5 Name
+		'CharSheet!', # Skill 2 Effect 5 Cost
+		'CharSheet!', # Skill 2 Effect 6 Name
+		'CharSheet!', # Skill 2 Effect 6 Cost
+		'CharSheet!', # Skill 2 Effect 7 Name
+		'CharSheet!', # Skill 2 Effect 7 Cost
+		'CharSheet!', # Skill 2 Effect 8 Name
+		'CharSheet!', # Skill 2 Effect 8 Cost
+		'CharSheet!', # Skill 2 Effect 9 Name
+		'CharSheet!', # Skill 2 Effect 9 Cost
+		'CharSheet!', # Skill 2 Effect 10 Name
+		'CharSheet!', # Skill 2 Effect 10 Cost
+		'CharSheet!', # Skill 2 Legal
+		'CharSheet!', # Skill 3 Name
+		'CharSheet!', # Skill 3 Type
+		'CharSheet!', # Skill 3 Dice range
+		'CharSheet!', # Skill 3 Dice mod
+		'CharSheet!', # Skill 3 Light cost
+		'CharSheet!', # Skill 3 Effect 1 Name
+		'CharSheet!', # Skill 3 Effect 1 Cost
+		'CharSheet!', # Skill 3 Effect 2 Name
+		'CharSheet!', # Skill 3 Effect 2 Cost
+		'CharSheet!', # Skill 3 Effect 3 Name
+		'CharSheet!', # Skill 3 Effect 3 Cost
+		'CharSheet!', # Skill 3 Effect 4 Name
+		'CharSheet!', # Skill 3 Effect 4 Cost
+		'CharSheet!', # Skill 3 Effect 5 Name
+		'CharSheet!', # Skill 3 Effect 5 Cost
+		'CharSheet!', # Skill 3 Effect 6 Name
+		'CharSheet!', # Skill 3 Effect 6 Cost
+		'CharSheet!', # Skill 3 Effect 7 Name
+		'CharSheet!', # Skill 3 Effect 7 Cost
+		'CharSheet!', # Skill 3 Effect 8 Name
+		'CharSheet!', # Skill 3 Effect 8 Cost
+		'CharSheet!', # Skill 3 Effect 9 Name
+		'CharSheet!', # Skill 3 Effect 9 Cost
+		'CharSheet!', # Skill 3 Effect 10 Name
+		'CharSheet!', # Skill 3 Effect 10 Cost
+		'CharSheet!', # Skill 3 Legal
+		'CharSheet!', # Skill 4 Name
+		'CharSheet!', # Skill 4 Type
+		'CharSheet!', # Skill 4 Dice range
+		'CharSheet!', # Skill 4 Dice mod
+		'CharSheet!', # Skill 4 Light cost
+		'CharSheet!', # Skill 4 Effect 1 Name
+		'CharSheet!', # Skill 4 Effect 1 Cost
+		'CharSheet!', # Skill 4 Effect 2 Name
+		'CharSheet!', # Skill 4 Effect 2 Cost
+		'CharSheet!', # Skill 4 Effect 3 Name
+		'CharSheet!', # Skill 4 Effect 3 Cost
+		'CharSheet!', # Skill 4 Effect 4 Name
+		'CharSheet!', # Skill 4 Effect 4 Cost
+		'CharSheet!', # Skill 4 Effect 5 Name
+		'CharSheet!', # Skill 4 Effect 5 Cost
+		'CharSheet!', # Skill 4 Effect 6 Name
+		'CharSheet!', # Skill 4 Effect 6 Cost
+		'CharSheet!', # Skill 4 Effect 7 Name
+		'CharSheet!', # Skill 4 Effect 7 Cost
+		'CharSheet!', # Skill 4 Effect 8 Name
+		'CharSheet!', # Skill 4 Effect 8 Cost
+		'CharSheet!', # Skill 4 Effect 9 Name
+		'CharSheet!', # Skill 4 Effect 9 Cost
+		'CharSheet!', # Skill 4 Effect 10 Name
+		'CharSheet!', # Skill 4 Effect 10 Cost
+		'CharSheet!', # Skill 4 Legal
+		'CharSheet!', # Skill 5 Name
+		'CharSheet!', # Skill 5 Type
+		'CharSheet!', # Skill 5 Dice range
+		'CharSheet!', # Skill 5 Dice mod
+		'CharSheet!', # Skill 5 Light cost
+		'CharSheet!', # Skill 5 Effect 1 Name
+		'CharSheet!', # Skill 5 Effect 1 Cost
+		'CharSheet!', # Skill 5 Effect 2 Name
+		'CharSheet!', # Skill 5 Effect 2 Cost
+		'CharSheet!', # Skill 5 Effect 3 Name
+		'CharSheet!', # Skill 5 Effect 3 Cost
+		'CharSheet!', # Skill 5 Effect 4 Name
+		'CharSheet!', # Skill 5 Effect 4 Cost
+		'CharSheet!', # Skill 5 Effect 5 Name
+		'CharSheet!', # Skill 5 Effect 5 Cost
+		'CharSheet!', # Skill 5 Effect 6 Name
+		'CharSheet!', # Skill 5 Effect 6 Cost
+		'CharSheet!', # Skill 5 Effect 7 Name
+		'CharSheet!', # Skill 5 Effect 7 Cost
+		'CharSheet!', # Skill 5 Effect 8 Name
+		'CharSheet!', # Skill 5 Effect 8 Cost
+		'CharSheet!', # Skill 5 Effect 9 Name
+		'CharSheet!', # Skill 5 Effect 9 Cost
+		'CharSheet!', # Skill 5 Effect 10 Name
+		'CharSheet!', # Skill 5 Effect 10 Cost
+		'CharSheet!', # Skill 5 Legal
+		'CharSheet!', # Skill 6 Name
+		'CharSheet!', # Skill 6 Type
+		'CharSheet!', # Skill 6 Dice range
+		'CharSheet!', # Skill 6 Dice mod
+		'CharSheet!', # Skill 6 Light cost
+		'CharSheet!', # Skill 6 Effect 1 Name
+		'CharSheet!', # Skill 6 Effect 1 Cost
+		'CharSheet!', # Skill 6 Effect 2 Name
+		'CharSheet!', # Skill 6 Effect 2 Cost
+		'CharSheet!', # Skill 6 Effect 3 Name
+		'CharSheet!', # Skill 6 Effect 3 Cost
+		'CharSheet!', # Skill 6 Effect 4 Name
+		'CharSheet!', # Skill 6 Effect 4 Cost
+		'CharSheet!', # Skill 6 Effect 5 Name
+		'CharSheet!', # Skill 6 Effect 5 Cost
+		'CharSheet!', # Skill 6 Effect 6 Name
+		'CharSheet!', # Skill 6 Effect 6 Cost
+		'CharSheet!', # Skill 6 Effect 7 Name
+		'CharSheet!', # Skill 6 Effect 7 Cost
+		'CharSheet!', # Skill 6 Effect 8 Name
+		'CharSheet!', # Skill 6 Effect 8 Cost
+		'CharSheet!', # Skill 6 Effect 9 Name
+		'CharSheet!', # Skill 6 Effect 9 Cost
+		'CharSheet!', # Skill 5 Effect 10 Name
+		'CharSheet!', # Skill 6 Effect 10 Cost
+		'CharSheet!', # Skill 6 Legal
 	]
 
 def get_character_background():
