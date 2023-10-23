@@ -195,6 +195,74 @@ RANGES = [
 		'CharSheet!S81', # Outfit Effect 10 Name
 		'CharSheet!S82', # Outfit Effect 10 Cost
 		'CharSheet!BI72', # Outfit Legal
+		'CharSheet!E84', # Tool 1 Name
+		'CharSheet!Q84', # Tool 1 Portable
+		'CharSheet!Q85', # Tool 1 Reusable
+		'CharSheet!E85', # Tool 1 Effect 1 Name
+		'CharSheet!E86', # Tool 1 Effect 1 Cost
+		'CharSheet!E87', # Tool 1 Effect 2 Name
+		'CharSheet!E88', # Tool 1 Effect 2 Cost
+		'CharSheet!E89', # Tool 1 Effect 3 Name
+		'CharSheet!E90', # Tool 1 Effect 3 Cost
+		'CharSheet!E91', # Tool 1 Effect 4 Name
+		'CharSheet!E92', # Tool 1 Effect 4 Cost
+		'CharSheet!E93', # Tool 1 Effect 5 Name
+		'CharSheet!E94', # Tool 1 Effect 5 Cost
+		'CharSheet!E95', # Tool 1 Effect 6 Name
+		'CharSheet!E96', # Tool 1 Effect 6 Cost
+		'CharSheet!R95', # Tool 1 Points max
+		'CharSheet!R96', # Tool 1 Points used
+		'CharSheet!U84', # Tool 2 Name
+		'CharSheet!AG84', # Tool 2 Portable
+		'CharSheet!AG85', # Tool 2 Reusable
+		'CharSheet!U85', # Tool 2 Effect 1 Name
+		'CharSheet!U86', # Tool 2 Effect 1 Cost
+		'CharSheet!U87', # Tool 2 Effect 2 Name
+		'CharSheet!U88', # Tool 2 Effect 2 Cost
+		'CharSheet!U89', # Tool 2 Effect 3 Name
+		'CharSheet!U90', # Tool 2 Effect 3 Cost
+		'CharSheet!U91', # Tool 2 Effect 4 Name
+		'CharSheet!U92', # Tool 2 Effect 4 Cost
+		'CharSheet!U93', # Tool 2 Effect 5 Name
+		'CharSheet!U94', # Tool 2 Effect 5 Cost
+		'CharSheet!U95', # Tool 2 Effect 6 Name
+		'CharSheet!U96', # Tool 2 Effect 6 Cost
+		'CharSheet!AH95', # Tool 2 Points max
+		'CharSheet!AH96', # Tool 2 Points used
+		'CharSheet!AK84', # Tool 3 Name
+		'CharSheet!AW84', # Tool 3 Portable
+		'CharSheet!AW85', # Tool 3 Reusable
+		'CharSheet!AK85', # Tool 3 Effect 1 Name
+		'CharSheet!AK86', # Tool 3 Effect 1 Cost
+		'CharSheet!AK87', # Tool 3 Effect 2 Name
+		'CharSheet!AK88', # Tool 3 Effect 2 Cost
+		'CharSheet!AK89', # Tool 3 Effect 3 Name
+		'CharSheet!AK90', # Tool 3 Effect 3 Cost
+		'CharSheet!AK91', # Tool 3 Effect 4 Name
+		'CharSheet!AK92', # Tool 3 Effect 4 Cost
+		'CharSheet!AK93', # Tool 3 Effect 5 Name
+		'CharSheet!AK94', # Tool 3 Effect 5 Cost
+		'CharSheet!AK95', # Tool 3 Effect 6 Name
+		'CharSheet!AK96', # Tool 3 Effect 6 Cost
+		'CharSheet!AX95', # Tool 3 Points max
+		'CharSheet!X96', # Tool 3 Points used
+		'CharSheet!BA84', # Tool 4 Name
+		'CharSheet!BM84', # Tool 4 Portable
+		'CharSheet!BM85', # Tool 4 Reusable
+		'CharSheet!BA85', # Tool 4 Effect 1 Name
+		'CharSheet!BA86', # Tool 4 Effect 1 Cost
+		'CharSheet!BA87', # Tool 4 Effect 2 Name
+		'CharSheet!BA88', # Tool 4 Effect 2 Cost
+		'CharSheet!BA89', # Tool 4 Effect 3 Name
+		'CharSheet!BA90', # Tool 4 Effect 3 Cost
+		'CharSheet!BA91', # Tool 4 Effect 4 Name
+		'CharSheet!BA92', # Tool 4 Effect 4 Cost
+		'CharSheet!BA93', # Tool 4 Effect 5 Name
+		'CharSheet!BA94', # Tool 4 Effect 5 Cost
+		'CharSheet!BA95', # Tool 4 Effect 6 Name
+		'CharSheet!BA96', # Tool 4 Effect 6 Cost
+		'CharSheet!BN95', # Tool 4 Points max
+		'CharSheet!BN96', # Tool 4 Points used
 		'CharSheet!B100', # Augment Name
 		'CharSheet!Y100', # Augment Type
 		'CharSheet!AF101', # Augment Effect 1 Name
@@ -376,56 +444,5 @@ RANGES = [
 		'CharSheet!BA138', # Skill 6 Legal
 	]
 
-def get_character_background():
-	""" Gets character name, occupation, age, height, and avatar. """
-
-	service.spreadsheets().value().batchGet()
-
-def get_rank_and_level():
-	""" Gets character rank, level, and exp. """
-
-	<>
-
-def get_character_stats():
-	""" Gets character Fortitude, Prudence, Justice, Charm, Insight, and Temperance.
-	Also, gets Att, Def, and Evd modifiers. """
-
-	<>
-
-def get_character_resources():
-	""" Gets character health, stagger resistance, mentality, and light. """
-
-	<>
-
-def get_character_weapon():
-	""" Gets character weapon details.
-	Includes melee/range, dice, modifiers, size, type, damage type, and effects. """
-
-	<>
-
-def get_character_outfit():
-	""" Gets character outfit details.
-	Includes Def dice, Evd dice, damage resistances, stagger resistances, and effects. """
-
-	<>
-
-def get_character_tool():
-	""" Gets character tool details.
-	Includes portability, reusability, and effects. """
-
-	<>
-
-def get_character_augmentation():
-	""" Gets character augmentation details.
-	Includes type and effects. Does not include functional part support. """
-
-	# TODO: Get functional part support.
-	# Possibly as a multi-choice list that references the "Functional Part Repository"?
-
-	<>
-
-def get_character_skills():
-	""" Gets character skill details.
-	Includes type, dice, light cost, and effects. """
-
-	<>
+except OSError as e:
+	print(e)
