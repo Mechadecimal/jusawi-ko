@@ -3,7 +3,7 @@ import os, httplib2
 from apiclient import discovery
 from google.oauth2 import service_account
 
-def get_character_dict():
+def get_character_list():
 	try:
 		scope = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 		secret_file = os.environ['VIRTUAL_ENV'] + os.path.join('/jusawi-ko-service-account.json')
@@ -15,27 +15,34 @@ def get_character_dict():
 			'BioSheet!F5', # Character Occupation
 			'BioSheet!E6', # Character Age
 			'BioSheet!M6', # Character Height
+
 			'CharSheet!AS2', # Player Name
+
 			'CharSheet!U21', # Character Rank
 			'CharSheet!AB23', # Character Level
 			'CharSheet!U23', # Character EXP
+
 			'CharSheet!R13', # Character Fortitude
 			'CharSheet!W13', # Character Prudence
 			'CharSheet!AB13', # Character Justice
 			'CharSheet!R20', # Character Charm
 			'CharSheet!W20', # Character Insight
-			'CharSheet!AB20', # CharacterTemperance
+			'CharSheet!AB20', # Character Temperance
+
 			'CharSheet!AO5', # Character Health max
 			'CharSheet!AZ5', # Character Stagger res nax
 			'CharSheet!AO7', # Character Mentality max
 			'CharSheet!AZ7', # Character Light max
+
 			'CharSheet!AJ9', # Character Att
 			'CharSheet!AQ9', # Character Def
 			'CharSheet!AX9', # Character Evd
+
 			'CharSheet!BM42', # Character Weapon effect slot amount
 			'CharSheet!BM43', # Character Outfit effect slot amount
 			'CharSheet!BM44', # Character Augment effect slot amount
 			'CharSheet!BM45', # Character Skill effect slot amount
+
 			'CharSheet!B47', # Weapon 1 Name
 			'CharSheet!O47', # Weapon 1 Melee true
 			'CharSheet!O48', # Weapon 1 Range true
@@ -67,6 +74,7 @@ def get_character_dict():
 			'CharSheet!M57', # Weapon 1 Effect 10 Name
 			'CharSheet!M58', # Weapon 1 Effect 10 Cost
 			'CharSheet!AG48', # Weapon 1 Legal
+
 			'CharSheet!AI47', # Weapon 2 Name
 			'CharSheet!AV47', # Weapon 2 Melee true
 			'CharSheet!AV48', # Weapon 2 Range true
@@ -98,6 +106,7 @@ def get_character_dict():
 			'CharSheet!AT57', # Weapon 2 Effect 10 Name
 			'CharSheet!AT58', # Weapon 2 Effect 10 Cost
 			'CharSheet!BN48', # Weapon 2 Legal
+
 			'CharSheet!B59', # Weapon 3 Name
 			'CharSheet!O59', # Weapon 3 Melee true
 			'CharSheet!O60', # Weapon 3 Range true
@@ -129,6 +138,7 @@ def get_character_dict():
 			'CharSheet!M69', # Weapon 3 Effect 10 Name
 			'CharSheet!M70', # Weapon 3 Effect 10 Cost
 			'CharSheet!AG60', # Weapon 3 Legal
+
 			'CharSheet!AI59', # Weapon 4 Name
 			'CharSheet!AV59', # Weapon 4 Melee true
 			'CharSheet!AV60', # Weapon 4 Range true
@@ -160,6 +170,7 @@ def get_character_dict():
 			'CharSheet!AT69', # Weapon 4 Effect 10 Name
 			'CharSheet!AT70', # Weapon 4 Effect 10 Cost
 			'CharSheet!BN60', # Weapon 4 Legal
+
 			'CharSheet!B72', # Outfit Name
 			'CharSheet!AJ72', # Outfit Def range
 			'CharSheet!AL72', # Outfit Def mod
@@ -192,6 +203,7 @@ def get_character_dict():
 			'CharSheet!S81', # Outfit Effect 10 Name
 			'CharSheet!S82', # Outfit Effect 10 Cost
 			'CharSheet!BI72', # Outfit Legal
+
 			'CharSheet!E84', # Tool 1 Name
 			'CharSheet!Q84', # Tool 1 Portable
 			'CharSheet!Q85', # Tool 1 Reusable
@@ -209,6 +221,7 @@ def get_character_dict():
 			'CharSheet!E96', # Tool 1 Effect 6 Cost
 			'CharSheet!R95', # Tool 1 Points max
 			'CharSheet!R96', # Tool 1 Points used
+
 			'CharSheet!U84', # Tool 2 Name
 			'CharSheet!AG84', # Tool 2 Portable
 			'CharSheet!AG85', # Tool 2 Reusable
@@ -226,6 +239,7 @@ def get_character_dict():
 			'CharSheet!U96', # Tool 2 Effect 6 Cost
 			'CharSheet!AH95', # Tool 2 Points max
 			'CharSheet!AH96', # Tool 2 Points used
+
 			'CharSheet!AK84', # Tool 3 Name
 			'CharSheet!AW84', # Tool 3 Portable
 			'CharSheet!AW85', # Tool 3 Reusable
@@ -243,6 +257,7 @@ def get_character_dict():
 			'CharSheet!AK96', # Tool 3 Effect 6 Cost
 			'CharSheet!AX95', # Tool 3 Points max
 			'CharSheet!X96', # Tool 3 Points used
+
 			'CharSheet!BA84', # Tool 4 Name
 			'CharSheet!BM84', # Tool 4 Portable
 			'CharSheet!BM85', # Tool 4 Reusable
@@ -260,6 +275,7 @@ def get_character_dict():
 			'CharSheet!BA96', # Tool 4 Effect 6 Cost
 			'CharSheet!BN95', # Tool 4 Points max
 			'CharSheet!BN96', # Tool 4 Points used
+
 			'CharSheet!B100', # Augment Name
 			'CharSheet!Y100', # Augment Type
 			'CharSheet!AF101', # Augment Effect 1 Name
@@ -283,6 +299,7 @@ def get_character_dict():
 			'CharSheet!AM109', # Augment Effect 10 Name
 			'CharSheet!AM110', # Augment Effect 10 Cost
 			'CharSheet!BA100', # Augment Legal
+
 			'CharSheet!C113', # Skill 1 Name
 			'CharSheet!X113', # Skill 1 Type
 			'CharSheet!M113', # Skill 1 Dice range
@@ -309,6 +326,7 @@ def get_character_dict():
 			'CharSheet!J123', # Skill 1 Effect 10 Name
 			'CharSheet!J124', # Skill 1 Effect 10 Cost
 			'CharSheet!AA114', # Skill 1 Legal
+
 			'CharSheet!AC113', # Skill 2 Name
 			'CharSheet!AX113', # Skill 2 Type
 			'CharSheet!AM113', # Skill 2 Dice range
@@ -335,6 +353,7 @@ def get_character_dict():
 			'CharSheet!AJ123', # Skill 2 Effect 10 Name
 			'CharSheet!AJ124', # Skill 2 Effect 10 Cost
 			'CharSheet!BA114', # Skill 2 Legal
+
 			'CharSheet!C125', # Skill 3 Name
 			'CharSheet!X125', # Skill 3 Type
 			'CharSheet!M125', # Skill 3 Dice range
@@ -361,6 +380,7 @@ def get_character_dict():
 			'CharSheet!J135', # Skill 3 Effect 10 Name
 			'CharSheet!J136', # Skill 3 Effect 10 Cost
 			'CharSheet!AA126', # Skill 3 Legal
+
 			'CharSheet!AC125', # Skill 4 Name
 			'CharSheet!AX125', # Skill 4 Type
 			'CharSheet!AM125', # Skill 4 Dice range
@@ -387,6 +407,7 @@ def get_character_dict():
 			'CharSheet!AJ135', # Skill 4 Effect 10 Name
 			'CharSheet!AJ136', # Skill 4 Effect 10 Cost
 			'CharSheet!BA126', # Skill 4 Legal
+
 			'CharSheet!C137', # Skill 5 Name
 			'CharSheet!X137', # Skill 5 Type
 			'CharSheet!M137', # Skill 5 Dice range
@@ -413,6 +434,7 @@ def get_character_dict():
 			'CharSheet!J147', # Skill 5 Effect 10 Name
 			'CharSheet!J148', # Skill 5 Effect 10 Cost
 			'CharSheet!AA138', # Skill 5 Legal
+
 			'CharSheet!AC137', # Skill 6 Name
 			'CharSheet!AX137', # Skill 6 Type
 			'CharSheet!AM137', # Skill 6 Dice range
@@ -441,13 +463,7 @@ def get_character_dict():
 			'CharSheet!BA138', # Skill 6 Legal
 		]
 
-		return service.spreadsheets().values().batchGet(spreadsheetId=spreadsheet_id, ranges = RANGES).execute()
+		return service.spreadsheets().values().batchGet(spreadsheetId=spreadsheet_id, ranges = RANGES).execute()['valueRanges']
 
 	except OSError as e:
 		return e
-
-def main():
-	print(get_character_dict())
-
-if __name__ == "__main__":
-	main()

@@ -22,7 +22,7 @@ async def roll(ctx):
 	try:
 		await ctx.send(f"{str(d20.roll(ctx.message.content.split(sep = ' ', maxsplit = 1)[1]))}")
 
-	except UnexpectedToken as e:
+	except Exception as e:
 		await ctx.send("Unexpected value, please rewrite!")
 
 with open(os.path.join(os.environ['VIRTUAL_ENV'] + '/discord_token.txt'), 'r') as token_file:
