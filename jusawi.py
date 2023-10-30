@@ -1,4 +1,4 @@
-import os, discord, d20, time
+import os, discord, d20, time, get_character_sheet
 from discord.ext import commands
 
 jusawi_prefix = 'j;'
@@ -13,7 +13,7 @@ async def on_ready():
 
 @jusawi_bot.command()
 async def ping(ctx):
-	print(f"{time.asctime(time.localtime())} | Received ping request by {ctx.author} from {ctx.guild}")
+	print(f"{time.asctime(time.localtime())} | Received ping request by {ctx.author} from {ctx.guild}.")
 	await ctx.send(f"Ping: {round(jusawi_bot.latency * 1000, 3)}ms")
 
 @jusawi_bot.command(aliases = ['r'])
@@ -24,6 +24,15 @@ async def roll(ctx):
 
 	except Exception as e:
 		await ctx.send("Unexpected value, please rewrite!")
+
+@jusawi_bot.command(aliases = ['import'])
+async def thanks_to_cowt(ctx, url):
+	print(f"{time.asctime(time.localtime())} | Received import request by {ctx.author} from {ctx.guild}.")
+	try:
+		get_character_sheet.get_character_list(url)
+
+	except Exception as e:
+		await ctx.send("Error while importing..." + str(e))
 
 with open(os.path.join(os.environ['VIRTUAL_ENV'] + '/discord_token.txt'), 'r') as token_file:
 	token = token_file.read()

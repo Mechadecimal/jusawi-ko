@@ -1,4 +1,4 @@
-import os, get_character_sheet, ast
+import os, get_character_sheet
 
 if not os.path.exists("character_sheet"):
 	with open("character_sheet", 'w') as f:

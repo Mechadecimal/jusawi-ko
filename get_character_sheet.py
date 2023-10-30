@@ -1,13 +1,13 @@
-import os, httplib2
+import os, httplib2, re
 
 from apiclient import discovery
 from google.oauth2 import service_account
 
-def get_character_list():
+def get_character_list(url):
 	try:
 		scope = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 		secret_file = os.environ['VIRTUAL_ENV'] + os.path.join('/jusawi-ko-service-account.json')
-		spreadsheet_id = '16i0VRiXUalrnUziJlIbXGf0U9ARTYEmh5rIhe6zRn8w'
+		spreadsheet_id = re.findall("(d\/[a-zA-Z0-9-_]+)", url)[0].split("/")[1]
 		credentials = service_account.Credentials.from_service_account_file(secret_file, scopes=scope)
 		service = discovery.build('sheets', 'v4', credentials=credentials)
 		RANGES = [
@@ -466,4 +466,5 @@ def get_character_list():
 		return service.spreadsheets().values().batchGet(spreadsheetId=spreadsheet_id, ranges = RANGES).execute()['valueRanges']
 
 	except OSError as e:
+		print(e)
 		return e
