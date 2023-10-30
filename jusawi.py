@@ -30,6 +30,7 @@ async def thanks_to_cowt(ctx, url):
 	print(f"{time.asctime(time.localtime())} | Received import request by {ctx.author} from {ctx.guild}.")
 	try:
 		get_character_sheet.get_character_list(url)
+		await ctx.send("Success!")
 
 	except Exception as e:
 		await ctx.send("Error while importing..." + str(e))
