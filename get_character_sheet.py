@@ -465,6 +465,6 @@ def get_character_list(url):
 
 		return service.spreadsheets().values().batchGet(spreadsheetId=spreadsheet_id, ranges = RANGES).execute()['valueRanges']
 
-	except OSError as e:
+	except Exception as e:
 		print(e)
 		return e
