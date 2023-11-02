@@ -7,7 +7,7 @@ def get_character_list(url):
 	try:
 		scope = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 		secret_file = os.environ['VIRTUAL_ENV'] + os.path.join('/jusawi-ko-service-account.json')
-		spreadsheet_id = re.findall("(d\/[a-zA-Z0-9-_]+)", url)[0].split("/")[1]
+		spreadsheet_id = re.findall("(d\/[a-zA-Z0-9-_]+)", url)[0].split('/')[1]
 		credentials = service_account.Credentials.from_service_account_file(secret_file, scopes=scope)
 		service = discovery.build('sheets', 'v4', credentials=credentials)
 		RANGES = [

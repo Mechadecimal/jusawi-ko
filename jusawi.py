@@ -1,5 +1,5 @@
 # ===== Imports =====
-import asyncio, os, discord, d20, time, get_character_sheet
+import asyncio, os, discord, d20, time, get_character_sheet, re, json
 from discord.ext import commands
 
 # ===== Bot Config =====
@@ -19,6 +19,9 @@ def embed(title, desc, color, foot, img, auth, **kwargs):
 	for key, val in kwargs.items():
 		embed.add_field(key, val, False)
 	return embed
+
+def get_spreadsheet_id(url):
+	return re.findall("(d\/[a-zA-Z0-9-_]+)", url)[0].split('/')[1]
 
 # ===== Asynchronous Functions (Commands) =====
 @bot.event
@@ -41,7 +44,7 @@ async def about(ctx):
 	""" About Jusawi-ko. """
 	print(command_timestamp("about", ctx))
 	about = {"About Jusawi-ko": "Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters. Currently uses the Community Rules 2.0\n\nOriginally designed for Kawazoi Office, with love :heart:.\n'Jusawi' means 'dice' in Korean, and the '-ko' suffix usually indicates a female child.\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko"}
-	await ctx.send(embed("About Jusawi-ko!", "About", (255, 255, 255), "Jusawi-ko is made by Wolfpai!", None, None, about))
+	await ctx.send(embed("About Jusawi-ko!", "About", (255, 255, 255), "Jusawi-ko is made by WolfPai!", None, None, about))
 
 @bot.command()
 async def ping(ctx):
@@ -58,7 +61,10 @@ async def ping(ctx):
 async def roll(ctx):
 	""" Roll a dice! """
 	print(command_timestamp("roll", ctx))
-	await ctx.send(f"{str(d20.roll(ctx.message.content.split(sep = ' ', maxsplit = 1)[1]))}")
+	try:
+		await ctx.send(f"{str(d20.roll(ctx.message.content.split(sep = ' ', maxsplit = 1)[1]))}")
+	except Exception as e:
+		print(e)
 
 @bot.command(aliases = ['import'])
 async def thank_you_cowts(ctx, url):
@@ -67,30 +73,51 @@ async def thank_you_cowts(ctx, url):
 		Jusawi-ko couldn't have been possible without you! """
 	print(command_timestamp("import", ctx))
 	try:
-		get_character_sheet.get_character_list(url)
-		await ctx.send("Successful `import`!")
-	except:
+		with open("venv/playerdata", 'r') as datafile:
+			for line in datafile:
+				if list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
+					await ctx.send("This character already exists! Use the `update` command to update instead.")
+				return
+		with open("venv/playerdata", 'a') as datafile:
+			data = {"player": ctx.message.author.name, get_spreadsheet_id(url): get_character_sheet.get_character_list(url)}
+			datafile.write(json.dumps(data))
+			await ctx.send("Successful `import`!")
+	except Exception as e:
+		print(e)
 		await ctx.send("This isn't a URL...")
 
 @bot.command()
 async def update(ctx):
 	""" Update a character's sheet! """
 	print(command_timestamp("update", ctx))
-	await ctx.send("Successful `update`!")
+	try:
+		await ctx.send("Successful `update`!")
+	except Exception as e:
+		print(e)
 
 @bot.command(aliases = ['char'])
 async def character(ctx, *args):
 	""" Display current character! """
 	print(command_timestamp("character", ctx))
-	if args and args[0].lower() == "list":
-		print("List characters...")
-	await ctx.send("Successful `char`!")
+	try:
+		if args and args[0].lower() == "list":
+			print("List characters...")
+		await ctx.send("Successful `char`!")
+	except Exception as e:
+		print(e)
 
 @bot.command()
 async def sheet(ctx):
 	""" Display the current character's sheet! """
 	print(command_timestamp("sheet", ctx))
-	await ctx.send("Successful `sheet`!")
+	try:
+		await ctx.send("Successful `sheet`!")
+	except Exception as e:
+		print(e)
+
+@bot.command()
+async def removecharacter(ctx):
+	""" Removes a character. Be careful! """
 
 # ===== Exception Handling =====
 @roll.error
