@@ -1,4 +1,0 @@
-- Make cogs for relevant commands inside `jusawi-ko.py`
-- Make cogs for relevant functions in `get_character_data.py`
-- Add support for functional parts
-	- Possibly through customized actions, similar to Avrae's custom counters and actions
