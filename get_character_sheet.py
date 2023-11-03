@@ -278,6 +278,20 @@ def get_character(url):
 
 			'CharSheet!B100', # Augment Name
 			'CharSheet!Y100', # Augment Type
+			'CharSheet!AY101', # Augment Prosthetics: Specialized Part
+			'CharSheet!AZ102', # Augment Prosthetics: Specialized Part Cost
+			'CharSheet!AY102', # Augment Prosthetics: Combat Part
+			'CharSheet!AZ102', # Augment Prosthetics: Combat Part Cost
+			'CharSheet!BA104', # Augment Aesthetics: Body Replacement
+			'CharSheet!BA105', # Augment Aesthetics: Non-Humanoid Body
+			'CharSheet!BA106', # Augment Aesthetics: Simple Prosthesis
+			'CharSheet!BM100', # Augment Functional Part 1 Cost
+			'CharSheet!BM101', # Augment Functional Part 2 Cost
+			'CharSheet!BM102', # Augment Functional Part 3 Cost
+			'CharSheet!BM103', # Augment Functional Part 4 Cost
+			'CharSheet!BM104', # Augment Functional Part 5 Cost
+			'CharSheet!BM105', # Augment Functional Part 6 Cost
+			'CharSheet!BM106', # Augment Functional Part 7 Cost
 			'CharSheet!AF101', # Augment Effect 1 Name
 			'CharSheet!AF102', # Augment Effect 1 Cost
 			'CharSheet!AM101', # Augment Effect 2 Name
@@ -467,22 +481,13 @@ def get_character(url):
 
 		charid = character['spreadsheetId']
 		charval = character['valueRanges']
-
-		templist = []
+		char = []
 
 		for i in charval:
-			if i.get('values'):
-				i = i['values'][0][0]
-			else:
-				i = None
-			print(i)
-			templist.append(i)
+			i = i['values'][0][0] if i.get('values') else None
+			char.append(i)
 
-		charval = templist
-
-		tempdict = {charid: charval}
-
-		return tempdict
+		return {charid: char}
 
 	except Exception as e:
 		print(e)

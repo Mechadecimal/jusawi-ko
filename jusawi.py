@@ -78,9 +78,10 @@ async def thank_you_cowts(ctx, url):
 					await ctx.send("This character already exists! Use the `update` command to update instead.")
 				return
 		with open("venv/playerdata", 'a') as datafile:
-			data = {"player": ctx.message.author.name, get_spreadsheet_id(url): get_character_sheet.get_character(url)}
+			data = {"player": ctx.message.author.name, get_character_sheet.get_character(url)}
 			datafile.write(json.dumps(data))
 			await ctx.send("Successful `import`!")
+			return
 	except Exception as e:
 		print(e)
 		await ctx.send("This isn't a URL...")
@@ -91,9 +92,24 @@ async def update(ctx, charname):
 	print(command_timestamp("update", ctx))
 	try:
 		with open("venv/playerdata", 'r') as datafile:
-			pass #if json.loads(line)["player"] == str(ctx.message.author.name) and json.loads(line)[list(json.loads(line).keys())[1]] # do check for character name
-		with open("venv/playerdata", 'a') as datafile:
-			pass #<>
+			line_i, line_j  = 0, 0
+			for line in datafile:
+				if json.loads(line)['player'] == str(ctx.message.author.name) and json.loads(line)[get_spreadsheet_id(json.loads(line).keys()[1])][0].lower() == charname.lower():
+					with open("venv/playerdata", 'w') as datafile:
+						for line in datafile:
+							if line_i != line_j:
+								datafile.write(line)
+					with open("venv/playerdata", 'a') as datafile:
+						data = {"player": ctx.message.author.name, get_character_sheet.get_character(url)}
+						datafile.write(json.dumps(data))
+					await ctx.send(charname + " updated!")
+					return
+				elif json.loads(line)['player'] == str(ctx.message.author.name):
+					
+					await ctx.send(charname + " doesn't seem to exist...\nHere's a list of your characters:\n")
+					return
+				line_index += 1
+
 	except Exception as e:
 		print(e)
 
@@ -120,6 +136,9 @@ async def sheet(ctx):
 @bot.command()
 async def removecharacter(ctx):
 	""" Removes a character. Be careful! """
+
+@bot.command(alias = ['a'])
+async def attack(ctx, t):
 
 # ===== Exception Handling =====
 @roll.error
