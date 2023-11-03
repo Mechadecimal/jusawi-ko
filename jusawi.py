@@ -50,12 +50,12 @@ async def about(ctx):
 async def ping(ctx):
 	""" Request a ping! """
 	print(command_timestamp("ping", ctx))
-	if bot.latency < 10:
-		await ctx.send(f"Ping: {round(bot.latency * 1000, 3)} ms\nThat's {round(10 / bot.latency, 3)} times faster than a WARP Train!")
-	elif bot.latency == 10:
-		await ctx.send(f"Ping: {round(bot.latency * 1000, 3)} ms\nThat's... the same speed as a WARP Train!")
+	if round(bot.latency) < 10:
+		await ctx.send(f"Ping: {round(bot.latency * 1000, 3)} ms\nThat's {round(10 / bot.latency)} times faster than a WARP Train!")
+	elif round(bot.latency) == 10:
+		await ctx.send(f"Ping: {round(bot.latency * 1000)} ms\nThat's... the same speed as a WARP Train!")
 	else:
-		await ctx.send(f"Ping: {round(bot.latency * 1000, 3)} ms\nThat's very slow... {round(10 / bot.latency, 3)} times slower than a WARP Train.")
+		await ctx.send(f"Ping: {round(bot.latency * 1000, 3)} ms\nThat's very slow... {round(10 / bot.latency)} times slower than a WARP Train.")
 
 @bot.command(aliases = ['r'])
 async def roll(ctx):
@@ -69,17 +69,16 @@ async def roll(ctx):
 @bot.command(aliases = ['import'])
 async def thank_you_cowts(ctx, url):
 	""" Import a character sheet! """
-	""" Thanks to CowTs for maintaining the Project Moon TTRPG Character Sheet!
-		Jusawi-ko couldn't have been possible without you! """
+	""" Thanks to CowTs for maintaining the Project Moon TTRPG Character Sheet! Jusawi-ko couldn't have been possible without you! """
 	print(command_timestamp("import", ctx))
 	try:
 		with open("venv/playerdata", 'r') as datafile:
 			for line in datafile:
-				if list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
+				if json.loads(line)["player"] == str(ctx.message.author.name) and list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
 					await ctx.send("This character already exists! Use the `update` command to update instead.")
 				return
 		with open("venv/playerdata", 'a') as datafile:
-			data = {"player": ctx.message.author.name, get_spreadsheet_id(url): get_character_sheet.get_character_list(url)}
+			data = {"player": ctx.message.author.name, get_spreadsheet_id(url): get_character_sheet.get_character(url)}
 			datafile.write(json.dumps(data))
 			await ctx.send("Successful `import`!")
 	except Exception as e:
@@ -87,11 +86,14 @@ async def thank_you_cowts(ctx, url):
 		await ctx.send("This isn't a URL...")
 
 @bot.command()
-async def update(ctx):
+async def update(ctx, charname):
 	""" Update a character's sheet! """
 	print(command_timestamp("update", ctx))
 	try:
-		await ctx.send("Successful `update`!")
+		with open("venv/playerdata", 'r') as datafile:
+			pass #if json.loads(line)["player"] == str(ctx.message.author.name) and json.loads(line)[list(json.loads(line).keys())[1]] # do check for character name
+		with open("venv/playerdata", 'a') as datafile:
+			pass #<>
 	except Exception as e:
 		print(e)
 

@@ -3,7 +3,7 @@ import os, httplib2, re
 from apiclient import discovery
 from google.oauth2 import service_account
 
-def get_character_list(url):
+def get_character(url):
 	try:
 		scope = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 		secret_file = os.environ['VIRTUAL_ENV'] + os.path.join('/jusawi-ko-service-account.json')
@@ -463,7 +463,26 @@ def get_character_list(url):
 			'CharSheet!BA138', # Skill 6 Legal
 		]
 
-		return service.spreadsheets().values().batchGet(spreadsheetId=spreadsheet_id, ranges = RANGES).execute()['valueRanges']
+		character = service.spreadsheets().values().batchGet(spreadsheetId = spreadsheet_id, ranges = RANGES).execute()
+
+		charid = character['spreadsheetId']
+		charval = character['valueRanges']
+
+		templist = []
+
+		for i in charval:
+			if i.get('values'):
+				i = i['values'][0][0]
+			else:
+				i = None
+			print(i)
+			templist.append(i)
+
+		charval = templist
+
+		tempdict = {charid: charval}
+
+		return tempdict
 
 	except Exception as e:
 		print(e)
