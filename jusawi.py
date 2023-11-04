@@ -110,7 +110,7 @@ async def update(ctx, charname):
 					await ctx.send(charname + " updated!")
 					return
 				elif line[0] == str(ctx.message.author.name):
-					# list all player characters
+					# list all player characters, because char fail
 					await ctx.send(charname + " doesn't seem to exist...\nHere's a list of your characters:\n")
 					return
 				line_index += 1
@@ -120,6 +120,10 @@ async def update(ctx, charname):
 
 @bot.command(aliases = ['char'])
 async def character(ctx, *args):
+	# Display with embed
+	# Remember arg[1] is char, if none, default
+	# On arg fail, do list chars with Number Select
+
 	""" Display current character! """
 	print(command_timestamp("character", ctx))
 	try:
@@ -130,7 +134,11 @@ async def character(ctx, *args):
 		print(e)
 
 @bot.command()
-async def sheet(ctx):
+async def sheet(ctx, *args):
+	# Somehow display with embed
+	# Remember arg[1] is char, if none, default
+	# On arg fail, do list chars with Number Select
+
 	""" Display the current character's sheet! """
 	print(command_timestamp("sheet", ctx))
 	try:
@@ -139,8 +147,13 @@ async def sheet(ctx):
 		print(e)
 
 @bot.command()
-async def removecharacter(ctx):
+async def removecharacter(ctx, char):
+	# Similar to the j;update r/w loop except requested
+	# On fail, list chars !! NO SINGLE BUTTON: NUMBER !!
+
 	""" Removes a character. Be careful! """
+
+
 
 @bot.command(aliases = 'br')
 async def break(ctx):
@@ -150,6 +163,7 @@ async def break(ctx):
 		await ctx.send("```\n\n\n```")
 	except Exception as e:
 		print(e)
+
 # ===== Exception Handling =====
 @roll.error
 async def roll_error(ctx, error):
