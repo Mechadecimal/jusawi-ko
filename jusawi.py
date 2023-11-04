@@ -1,5 +1,5 @@
 # ===== Imports =====
-import asyncio, os, discord, d20, time, get_character_sheet, re, json
+import asyncio, os, discord, d20, time, get_character_sheet, re
 from discord.ext import commands
 
 # ===== Bot Config =====
