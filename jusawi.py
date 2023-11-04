@@ -14,10 +14,15 @@ bot.remove_command("help")
 def command_timestamp(cmd, ctx):
 	return f"{time.asctime(time.localtime())} | Received `{cmd}` request by {ctx.author} from {ctx.guild}."
 
-def embed(title, desc, color, foot, img, auth, **kwargs):
-	embed = discord.Embed(title = title, description = desc, color = color, set_footer = foot, set_thumbnail = img, set_author = auth)
-	for key, val in kwargs.items():
-		embed.add_field(key, val, False)
+def embed(title, desc, color, foot, img, auth, fields = None):
+	r, g, b = color
+	embed = discord.Embed(title = title, description = desc, color = discord.Color.from_rgb(r, g, b))
+	embed.set_footer(foot)
+	embed.set_thumbnail(img)
+	embed.set_author(auth)
+	if fields:
+		for k in fields.keys():
+			embed.add_field(k, fields[k], False)
 	return embed
 
 def get_spreadsheet_id(url):
@@ -34,8 +39,8 @@ async def on_ready():
 async def help(ctx):
 	""" Display this message! """
 	print(command_timestamp("help", ctx))
-	cmd_name = ["Help", "Ping", "Roll", "Import"]
-	cmd_desc = ["Display this message!", "Request a ping!", "Roll a dice!", "Import a character sheet!"]
+	cmd_name = ["Help", "About", "Ping", "Roll", "Import", "Update", "Character", "Sheet", "Remove Character", "Break"]
+	cmd_desc = ["Display this message!", "About Jusawi-ko.", "Request a ping!", "Roll a dice!", "Import a character sheet!", "Update a character's sheet!", "Display current character!", "Display the current character's sheet!", "Removes a character. Be careful!", "Prints a scene break."]
 	cmd_help = {cmd_name[i]: cmd_desc[i] for i in range(len(cmd_name))}
 	await ctx.send(embed("Jusawi-ko Help!", "Help Menu", (255, 255, 255), "Jusawi-ko is made by WolfPai!", None, None, cmd_help))
 
@@ -137,6 +142,14 @@ async def sheet(ctx):
 async def removecharacter(ctx):
 	""" Removes a character. Be careful! """
 
+@bot.command(aliases = 'br')
+async def break(ctx):
+	""" Prints a scene break. """
+	print(command_timestamp("break", ctx))
+	try:
+		await ctx.send("```\n\n\n```")
+	except Exception as e:
+		print(e)
 # ===== Exception Handling =====
 @roll.error
 async def roll_error(ctx, error):
