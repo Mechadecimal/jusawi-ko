@@ -43,7 +43,7 @@ async def help(ctx):
 async def about(ctx):
 	""" About Jusawi-ko. """
 	print(command_timestamp("about", ctx))
-	about = {"About Jusawi-ko": "Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters. Currently uses the Community Rules 2.0\n\nOriginally designed for Kawazoi Office, with love :heart:.\n'Jusawi' means 'dice' in Korean, and the '-ko' suffix usually indicates a female child.\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko"}
+	about = {"About Jusawi-ko": "Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters. Currently uses the Community Rules 3.0\n\nOriginally designed for Kawazoi Office, with love :heart:.\n'Jusawi' means 'dice' in Korean, and the '-ko' suffix usually indicates a female.\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko"}
 	await ctx.send(embed("About Jusawi-ko!", "About", (255, 255, 255), "Jusawi-ko is made by WolfPai!", None, None, about))
 
 @bot.command()

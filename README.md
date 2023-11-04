@@ -1,6 +1,6 @@
 # jusawi-ko
 Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters.
-Currently uses the Community Rules 2.0
+Currently uses the Community Rules 3.0
 
 Originally designed for Kawazoi Office, with love. ❤️
 
