@@ -74,12 +74,12 @@ async def thank_you_cowts(ctx, url):
 	try:
 		with open("venv/playerdata", 'r') as datafile:
 			for line in datafile:
-				if json.loads(line)["player"] == str(ctx.message.author.name) and list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
+				if lines[0] == str(ctx.message.author.name) and list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
 					await ctx.send("This character already exists! Use the `update` command to update instead.")
 				return
 		with open("venv/playerdata", 'a') as datafile:
-			data = {"player": ctx.message.author.name, get_character_sheet.get_character(url)}
-			datafile.write(json.dumps(data))
+			data = [ctx.message.author.name, get_character_sheet.get_character(url)]
+			datafile.write(str(data))
 			await ctx.send("Successful `import`!")
 			return
 	except Exception as e:
@@ -94,18 +94,18 @@ async def update(ctx, charname):
 		with open("venv/playerdata", 'r') as datafile:
 			line_i, line_j  = 0, 0
 			for line in datafile:
-				if json.loads(line)['player'] == str(ctx.message.author.name) and json.loads(line)[get_spreadsheet_id(json.loads(line).keys()[1])][0].lower() == charname.lower():
+				if line[0] == str(ctx.message.author.name) and line[1][get_spreadsheet_id(url)][0] == charname.lower():
 					with open("venv/playerdata", 'w') as datafile:
 						for line in datafile:
 							if line_i != line_j:
-								datafile.write(line)
+								datafile.write(str(line))
 					with open("venv/playerdata", 'a') as datafile:
-						data = {"player": ctx.message.author.name, get_character_sheet.get_character(url)}
-						datafile.write(json.dumps(data))
+						data = [ctx.message.author.name, get_character_sheet.get_character(url)]
+						datafile.write(str(data))
 					await ctx.send(charname + " updated!")
 					return
-				elif json.loads(line)['player'] == str(ctx.message.author.name):
-					
+				elif line[0] == str(ctx.message.author.name):
+					# list all player characters
 					await ctx.send(charname + " doesn't seem to exist...\nHere's a list of your characters:\n")
 					return
 				line_index += 1
@@ -136,9 +136,6 @@ async def sheet(ctx):
 @bot.command()
 async def removecharacter(ctx):
 	""" Removes a character. Be careful! """
-
-@bot.command(alias = ['a'])
-async def attack(ctx, t):
 
 # ===== Exception Handling =====
 @roll.error
