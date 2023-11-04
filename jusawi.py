@@ -28,7 +28,7 @@ def get_spreadsheet_id(url):
 async def on_ready():
 	""" Readies the Discord client. """
 	print(time.asctime(time.localtime()) + " | Jusawi-ko is online!")
-	await bot.change_presence(activity=discord.Game(name="Library of Ruina | j;help"))
+	await bot.change_presence(activity = discord.Game(name = "Library of Ruina | j;help"))
 
 @bot.command()
 async def help(ctx):
