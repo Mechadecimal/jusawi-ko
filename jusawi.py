@@ -153,10 +153,8 @@ async def removecharacter(ctx, char):
 
 	""" Removes a character. Be careful! """
 
-
-
-@bot.command(aliases = 'br')
-async def break(ctx):
+@bot.command(aliases = ['break'])
+async def br(ctx):
 	""" Prints a scene break. """
 	print(command_timestamp("break", ctx))
 	try:
