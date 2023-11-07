@@ -1,38 +1,55 @@
 import os, sys
 
-def combat_begin():
-  # Needs to init some kind of file, storing init
-    # Look into Classes for this... or somehow define a global var that can help differentiate between files
+class Combatant:
+	def __init__(self, char, hp, stagger, sanity, light, speed, actions, reactions, status)
+		self.char = char
+		self.hp = hp
+		self.stagger = stagger
+		self.sanity = sanity
+		self.light = light
+		self.speed = speed
+		self.actions = actions
+		self.reactions = reactions
+		self.status = status
 
-def combat_join():
-  # Join combat with standard rule (CR 3.0)
-  # Remember that joining during mid-combat is permitted, but will have to take their first move last
-  # One-sided is Clash Win
-  # Tie is do again -> recursive?
+class Combat:
+	def __init__(self, channel, combatants, round, surprise):
+		self.channel = channel
+		self.combatants = combatants
+		self.round = round
+		self.surprise = surprise
 
-def action():
-  # Melee Attack
-  # Ranged Attack
-  # Protect
-  # Reduce Status
-  # Dash
-  # Disengage
-  # Use Tool
-  # Grapple
-  # Take Cover
-  # Hide
-  # Change Weapons
-  # Convert to Reaction
-  # Delay
+	def combat_begin(self):
+		# Somehow...
 
-  # Somehow give prompt to target for Clash
+	def combat_join(self):
+		# Join combat with standard rule (CR 3.0)
+		# Remember that joining during mid-combat is permitted, but will have to take their first move last
 
+	def action(self):
+		# Melee Attack
+		# Ranged Attack
+		# Protect
+		# Reduce Status
+		# Dash
+		# Disengage
+		# Use Tool
+		# Grapple
+		# Take Cover
+		# Hide
+		# Change Weapons
+		# Convert to Reaction
+		# Delay
 
-def reaction():
-  # Do you want to react to <Action>?
-  # Button: yes/no
-  # On yes: do block/counter/evade
-  # Special case: Opportunity attack
+		# Somehow give prompt to target for Clash
+		# One-sided is Clash Win
+		# Tie si do again --> recursively call action()?
 
-def combat_end():
-  # Only initiator can end
+	def reaction(self):
+		# Do you want to react to <Action>?
+		# Button: yes/no
+		# On yes: do block/counter/evade
+		# Special case: Opportunity attack
+
+	def combat_end(self):
+		# Only initiator can end
