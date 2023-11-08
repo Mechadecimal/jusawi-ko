@@ -14,7 +14,7 @@ bot.remove_command("help")
 def command_timestamp(cmd, ctx):
 	return f"{time.asctime(time.localtime())} | Received `{cmd}` request by {ctx.author} from {ctx.guild}."
 
-def embed(title, desc, color, foot, img, auth, fields = None):
+def embed(title, desc, color, foot, img, auth, fields = None, buttons = None):
 	r, g, b = color
 	embed = discord.Embed(title = title, description = desc, color = discord.Color.from_rgb(r, g, b))
 	embed.set_footer(foot)
@@ -23,6 +23,9 @@ def embed(title, desc, color, foot, img, auth, fields = None):
 	if fields:
 		for k in fields.keys():
 			embed.add_field(k, fields[k], False)
+	if buttons:
+		for b in buttons:
+			# TODO : buttons
 	return embed
 
 def get_spreadsheet_id(url):
