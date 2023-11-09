@@ -14,7 +14,7 @@ bot.remove_command("help")
 def command_timestamp(cmd, ctx):
 	return f"{time.asctime(time.localtime())} | Received `{cmd}` request by {ctx.author} from {ctx.guild}."
 
-def embed(title, desc, color, foot, img, auth, fields = None, buttons = None):
+def embed(title = None, desc = None, color = (255, 255, 255), foot = None, img = None, auth = None, fields = None, buttons = None):
 	r, g, b = color
 	embed = discord.Embed(title = title, description = desc, color = discord.Color.from_rgb(r, g, b))
 	embed.set_footer(foot)
@@ -25,6 +25,7 @@ def embed(title, desc, color, foot, img, auth, fields = None, buttons = None):
 			embed.add_field(k, fields[k], False)
 	if buttons:
 		for b in buttons:
+			pass
 			# TODO : buttons
 	return embed
 
@@ -42,17 +43,25 @@ async def on_ready():
 async def help(ctx):
 	""" Display this message! """
 	print(command_timestamp("help", ctx))
+	await ctx.send("`Jusawi-ko Help!`\n```Help Menu:\nHelp - Display this message!\nAbout - About Jusawi-ko.\nPing - Request a ping!\nRoll (`r`) - Roll a dice!\nImport - Import a character sheet!\nUpdate - Update a character's sheet\nCharacter (`char`) - Display current character!\nSheet - Display the current\nRemove Character - Removes a character. Be careful!\nBreak (`br`) - Prints a scene break.\nChallenge Roll (`c`) - Roll a challenge roll!```")
+
+	# Embed form
+	'''
 	cmd_name = ["Help", "About", "Ping", "Roll", "Import", "Update", "Character", "Sheet", "Remove Character", "Break"]
 	cmd_desc = ["Display this message!", "About Jusawi-ko.", "Request a ping!", "Roll a dice!", "Import a character sheet!", "Update a character's sheet!", "Display current character!", "Display the current character's sheet!", "Removes a character. Be careful!", "Prints a scene break."]
 	cmd_help = {cmd_name[i]: cmd_desc[i] for i in range(len(cmd_name))}
-	await ctx.send(embed("Jusawi-ko Help!", "Help Menu", (255, 255, 255), "Jusawi-ko is made by WolfPai!", None, None, cmd_help))
-
+	await ctx.send(embed(title = "Jusawi-ko Help!", desc = "Help Menu", color = (255, 255, 255), foot = "Jusawi-ko is made by WolfPai!", fields = cmd_help))
+	'''
 @bot.command()
 async def about(ctx):
 	""" About Jusawi-ko. """
 	print(command_timestamp("about", ctx))
-	about = {"About Jusawi-ko": "Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters. Currently uses the Community Rules 3.0\n\nOriginally designed for Kawazoi Office, with love :heart:.\n'Jusawi' means 'dice' in Korean, and the '-ko' suffix usually indicates a female.\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko"}
+	await ctx.send("`About Jusawi-ko!`\nJusawi-ko is a Discord bot designed to help with managing Project Moon Table Roleplay Game character. Currently uses the Community Rules 3.0\nOriginally designed for Kawazoi Office, with love! :heart:\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko")
+
+	'''
+	about = {"About Jusawi-ko": "Jusawi-ko is a Discord bot designed to help with managing Project Moon Tabletop Roleplay Game characters. Currently uses the Community Rules 3.0\n\nOriginally designed for Kawazoi Office, with love :heart:.\nLook at the source code here: https://github.com/Wolf-Pai/jusawi-ko"}
 	await ctx.send(embed("About Jusawi-ko!", "About", (255, 255, 255), "Jusawi-ko is made by WolfPai!", None, None, about))
+	'''
 
 @bot.command()
 async def ping(ctx):
@@ -74,6 +83,27 @@ async def roll(ctx):
 	except Exception as e:
 		print(e)
 
+@bot.command(aliases = ['c'])
+async def challenge(ctx, stat):
+	""" Roll a challenge roll! """
+	print(command_timestamp("challenge", ctx))
+	try:
+		stat = stat.lower()
+		if stat in "fortitude":
+			pass
+		elif stat in "prudence":
+			pass
+		elif stat in "justice":
+			pass
+		elif stat in "charm":
+			pass
+		elif stat in "insight":
+			pass
+		else:
+			pass
+	except Exception as e:
+		print(e)
+
 @bot.command(aliases = ['import'])
 async def thank_you_cowts(ctx, url):
 	""" Import a character sheet! """
@@ -82,12 +112,15 @@ async def thank_you_cowts(ctx, url):
 	try:
 		with open("venv/playerdata", 'r') as datafile:
 			for line in datafile:
-				if lines[0] == str(ctx.message.author.name) and list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
+				if line[0] == str(ctx.message.author.name) and list(json.loads(line).keys())[1] == get_spreadsheet_id(url):
 					await ctx.send("This character already exists! Use the `update` command to update instead.")
 				return
 		with open("venv/playerdata", 'a') as datafile:
 			data = [ctx.message.author.name, get_character_sheet.get_character(url)]
 			datafile.write(str(data))
+			with open("venv/activeplayer", 'a') as active:
+				player = [ctx.message.author.name, list(data[1].keys())[0]]
+				active.write(str(player))
 			await ctx.send("Successful `import`!")
 			return
 	except Exception as e:
@@ -116,7 +149,7 @@ async def update(ctx, charname):
 					# list all player characters, because char fail
 					await ctx.send(charname + " doesn't seem to exist...\nHere's a list of your characters:\n")
 					return
-				line_index += 1
+				line_i += 1
 
 	except Exception as e:
 		print(e)
@@ -130,8 +163,8 @@ async def character(ctx, *args):
 	""" Display current character! """
 	print(command_timestamp("character", ctx))
 	try:
-		if args and args[0].lower() == "list":
-			print("List characters...")
+		with open("venv/activeplayer", 'r'):
+			pass
 		await ctx.send("Successful `char`!")
 	except Exception as e:
 		print(e)
@@ -171,6 +204,12 @@ async def roll_error(ctx, error):
 	""" Exception handling for `roll` """
 	if isinstance(error, commands.CommandInvokeError):
 		await ctx.send("Missing a dice!")
+
+@challenge.error
+async def challenge_error(ctx, error):
+	""" Exception handling for `challenge` """
+	if isinstance(error, commands.MissingRequiredArgument):
+		await ctx.send("Missing a stat for the challenge roll!")
 
 @thank_you_cowts.error
 async def import_error(ctx, error):
