@@ -189,6 +189,18 @@ async def removecharacter(ctx, char):
 
 	""" Removes a character. Be careful! """
 
+# def pin_message()
+# Try and pin a message; usually will be used for init tracking
+
+@bot.command(aliases = ['i', 'init'])
+async def initiative(ctx):
+	""" Initiates combat! """
+	print(command_timestamp("init", ctx))
+	try:
+		await ctx.send("Init Begin!")
+	except Exception as e:
+		print(e)
+
 @bot.command(aliases = ['break'])
 async def br(ctx):
 	""" Prints a scene break. """
